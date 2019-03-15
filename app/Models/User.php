@@ -36,4 +36,8 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function gravatar(){
+        return "http://img5.duitang.com/uploads/item/201410/02/20141002212239_zWR55.jpeg";
+    }
 }
