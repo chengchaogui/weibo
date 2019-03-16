@@ -38,6 +38,6 @@ class User extends Authenticatable
     ];
 
     public function gravatar(){
-        return "http://img5.duitang.com/uploads/item/201410/02/20141002212239_zWR55.jpeg";
+        return "http://img.qqzhi.com/uploads/2018-12-06/112700424.jpg";
     }
 }
