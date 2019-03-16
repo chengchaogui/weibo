@@ -18,7 +18,7 @@ class UsersController extends Controller
     public function index()
     {
         $users = User::paginate(10);
-        return view('users.index',compact('users'));
+        return view('users.index', compact('users'));
     }
 
     public function create()
@@ -72,5 +72,13 @@ class UsersController extends Controller
         $user->update($data);
         session()->flash('success', '个人资料更新成功！');
         return redirect()->route('users.show', $user);
+    }
+
+    public function destroy(User $user)
+    {
+        $this->authorize('destroy', $user);
+        $user->delete();
+        session()->flash('success', '用户删除成功');
+        return back();
     }
 }
